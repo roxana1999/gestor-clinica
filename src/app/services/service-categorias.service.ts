@@ -17,6 +17,10 @@ export class ServiceCategoriasService {
     return this.http.get<listaCategorias<Categoria>>(this.api);
   }
 
+  getCategoriaPorId(id: number): Observable<Categoria> {
+    return this.http.get<Categoria>(this.api+'/'+id);
+  }
+
   agregarCategoria(c: Categoria): Observable<Categoria> {
     return this.http
       .post<Categoria>(this.api, c)
@@ -24,6 +28,21 @@ export class ServiceCategoriasService {
         tap(
           {
             next: data => {console.log('agregado '+data)},
+            error: err => console.log("error: "+err)
+          }
+        )
+      );
+  }
+
+  actualizarCategoria(id: number, categoria: Categoria): Observable<Categoria> {
+    let url = this.api
+    console.log(url)
+    return this.http
+      .put<Categoria>(url, categoria)
+      .pipe(
+        tap(
+          {
+            next: data => {console.log('actualizado '+data)},
             error: err => console.log("error: "+err)
           }
         )

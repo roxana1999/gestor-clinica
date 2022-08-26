@@ -8,12 +8,14 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
 import { ServiceCategoriasService } from './services/service-categorias.service';
 import { CategoriasAgregarComponent } from './components/categorias/categorias-agregar/categorias-agregar.component';
 import { FormsModule } from '@angular/forms';
+import { CategoriasActualizarComponent } from './components/categorias/categorias-actualizar/categorias-actualizar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriasComponent,
-    CategoriasAgregarComponent
+    CategoriasAgregarComponent,
+    CategoriasActualizarComponent
   ],
   imports: [
     BrowserModule,

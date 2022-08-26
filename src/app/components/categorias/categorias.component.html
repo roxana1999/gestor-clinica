@@ -1,7 +1,7 @@
 <p>Lista de categorias works!</p>
 
 <div>
-  <a routerLink="../nuevaCategoria">Crear nueva categoría</a>
+  <a routerLink="nuevaCategoria">Crear nueva categoría</a>
 </div>
 <br>
 <div *ngIf="categorias.length>0">
@@ -13,6 +13,10 @@
     <tr *ngFor="let c of categorias">
       <td>{{c.idCategoria}}</td>
       <td>{{c.descripcion}}</td>
+      <td> 
+        <a [routerLink]="['actualizarCategoria', c.idCategoria]"> Modificar</a>
+      </td>
+      <td> Eliminar</td>
     </tr>
   </table>
 </div>

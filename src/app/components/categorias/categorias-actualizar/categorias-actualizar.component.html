@@ -1,0 +1,11 @@
+<p>categorias-actualizar works!</p>
+
+<div>
+    ID : {{categoria.idCategoria}}<br>
+    Nombre anterior de la categoría: {{descripcionAnterior}}<br>
+    Nuevo nombre de la categoría <input  [(ngModel)]="categoria.descripcion">
+    <br>
+    <button  (click)="actualizarCategoria()">Actualizar categoría</button>
+    <br/>
+</div>
+{{mensaje}}
