@@ -1,0 +1,10 @@
+<div>
+    Nombre de la categoría a eliminar: {{categoria.descripcion}}<br>
+    <br>
+    ¿Desea eliminar la categoría?
+    <button  (click)="eliminarCategoria()">Sí, eliminar esta categoría</button>
+    <button  routerLink="/categorias">No, volver</button>
+    <br/>
+    <router-outlet></router-outlet>
+</div>
+{{mensaje}}

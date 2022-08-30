@@ -49,5 +49,11 @@ export class ServiceCategoriasService {
       );
   }
 
+  eliminarCategoria(id: number): Observable<Object> {
+    let url = this.api+'/'+id;
+    console.log(url);
+    return this.http.delete(url);
+  }
+
    
 }
