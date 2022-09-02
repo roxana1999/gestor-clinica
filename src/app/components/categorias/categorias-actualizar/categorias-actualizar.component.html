@@ -1,11 +1,22 @@
-<p>categorias-actualizar works!</p>
-
-<div>
-    ID : {{categoria.idCategoria}}<br>
-    Nombre anterior de la categoría: {{descripcionAnterior}}<br>
-    Nuevo nombre de la categoría <input  [(ngModel)]="categoria.descripcion">
-    <br>
-    <button  (click)="actualizarCategoria()">Actualizar categoría</button>
-    <br/>
+<div *ngIf="success; else mostrarForm">
+    <div class="alert alert-success" role="alert">
+        {{mensaje}}
+    </div>
+    <button class="btn btn-secondary" routerLink="/categorias">Volver</button>
 </div>
-{{mensaje}}
+<div>
+    <ng-template #mostrarForm>
+        ID : {{categoria.idCategoria}}<br>
+        Nombre anterior de la categoría: {{descripcionAnterior}}<br>
+        <br>Nuevo nombre de la categoría <input  [(ngModel)]="categoria.descripcion">
+        <div class="espacio"></div>
+        <button  (click)="actualizarCategoria()" class="btn btn-primary">Actualizar categoría</button>
+    </ng-template>
+</div>
+<div class="espacio"></div>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    {{mensaje}}
+    Intente más tarde.
+</div>
+
+<router-outlet></router-outlet>

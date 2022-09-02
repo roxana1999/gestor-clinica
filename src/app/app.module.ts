@@ -13,6 +13,7 @@ import { CategoriasEliminarComponent } from './components/categorias/categorias-
 import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
 import { SubcategoriaEliminarComponent } from './components/subcategoria/subcategoria-eliminar/subcategoria-eliminar.component';
 import { SubcategoriaAgregarComponent } from './components/subcategoria/subcategoria-agregar/subcategoria-agregar.component';
+import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SubcategoriaAgregarComponent } from './components/subcategoria/subcateg
     CategoriasEliminarComponent,
     SubcategoriaComponent,
     SubcategoriaEliminarComponent,
-    SubcategoriaAgregarComponent
+    SubcategoriaAgregarComponent,
+    SubcategoriaActualizarComponent
   ],
   imports: [
     BrowserModule,

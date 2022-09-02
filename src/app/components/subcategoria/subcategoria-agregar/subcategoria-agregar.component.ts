@@ -31,6 +31,7 @@ export class SubcategoriaAgregarComponent implements OnInit {
   }
 
   agregarSubcategoria(): void {
+    this.error = false;
     this.servicioSubcategorias.agregarSubcategoria(this.subcategoria).subscribe(
       {
         next: () => {this.success=true; this.mensaje='Subcategoría creada exitosamente.'}, 
