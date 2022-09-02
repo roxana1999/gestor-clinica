@@ -6,19 +6,19 @@
 </div>
 <div>
     <ng-template #mostrarForm>
-        <b>Categoría a eliminar:</b> {{categoria.descripcion}}<br><br>
-        <p>¿Desea eliminar la categoría?</p>
-        <div class="d-flex" style="gap: 10px;">
-            <button class="btn btn-danger" (click)="eliminarCategoria()">Sí, eliminar esta categoría</button>
-            <button class="btn btn-secondary" routerLink="/categorias">No, volver</button>
-        </div>
+        <b>Categoría: </b> {{categoria.descripcion}}
+        <div class="espacio"></div>
+        <div>Nombre de la subcategoría
+        <input [(ngModel)]="subcategoria.descripcion"></div>
+        <div class="espacio"></div>
+        <button (click)="agregarSubcategoria()" class="btn btn-primary">Agregar nueva subcategoría</button>
     </ng-template>
 </div>
+
 <div class="espacio"></div>
 <div *ngIf="error" class="alert alert-danger" role="alert">
     {{mensaje}}
     Intente más tarde.
 </div>
-
 
 <router-outlet></router-outlet>

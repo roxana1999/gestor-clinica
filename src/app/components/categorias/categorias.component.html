@@ -1,25 +1,30 @@
-<p>Lista de categorias works!</p>
-
-<div>
-  <a routerLink="nuevaCategoria">Crear nueva categoría</a>
+<div style="width: fit-content; margin-left: auto;">
+  <a routerLink="nuevaCategoria" class="btn btn-primary">Crear nueva categoría</a>
 </div>
-<br>
+<div class="espacio"></div>
+<h3>Categorías</h3>
 <div *ngIf="categorias.length>0">
-  <table border="1">
-    <tr>
-      <td>Id</td>
-      <td>Descripcion</td>
-    </tr>
-    <tr *ngFor="let c of categorias">
-      <td>{{c.idCategoria}}</td>
-      <td>{{c.descripcion}}</td>
-      <td> 
-        <a [routerLink]="['actualizarCategoria', c.idCategoria]"> Modificar</a>
-      </td>
-      <td> 
-        <a [routerLink]="['eliminarCategoria', c.idCategoria]"> Eliminar</a>
-      </td>
-    </tr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="column">Id</th>
+        <th scope="column">Descripcion</th>
+        <th scope="column">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of categorias">
+        <th scope="row">{{c.idCategoria}}</th>
+        <td>{{c.descripcion}}</td>
+        <td>
+          <div class="d-flex" style="gap: 10px;">
+            <a [routerLink]="['actualizarCategoria', c.idCategoria]" class="btn btn-secondary"> Modificar</a>
+            <a [routerLink]="['eliminarCategoria', c.idCategoria]" class="btn btn-danger"> Eliminar</a>
+            <a [routerLink]="['/subcategorias/crearSubcategoria', c.idCategoria]" class="btn btn-primary"> Crear subcategoría</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
 

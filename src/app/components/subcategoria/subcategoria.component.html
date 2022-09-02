@@ -1,0 +1,32 @@
+<h3>Subcategorías</h3>
+<div *ngIf="subcategorias.length>0">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">ID categoria</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of subcategorias">
+                <th scope="row">{{c.idTipoProducto}}</th>
+                <td>{{c.descripcion}}</td>
+                <td>{{c.idCategoria.idCategoria}}</td>
+                <td>
+                    <div class="d-flex" style="width: fit-content; gap: 5px; display: inline-block;">
+                        <a [routerLink]="['actualizarSubcategoria', c.idTipoProducto]" class="btn btn-secondary">
+                            Modificar</a>
+                        <a [routerLink]="['eliminarSubcategoria', c.idTipoProducto]" class="btn btn-danger">
+                            Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+</div>

@@ -6,11 +6,11 @@
 </div>
 <div>
     <ng-template #mostrarForm>
-        <b>Categoría a eliminar:</b> {{categoria.descripcion}}<br><br>
-        <p>¿Desea eliminar la categoría?</p>
+        <b>Subcategoría a eliminar:</b> {{subcategoria.descripcion}}<br><br>
+        <p>¿Desea eliminar la subcategoría?</p>
         <div class="d-flex" style="gap: 10px;">
-            <button class="btn btn-danger" (click)="eliminarCategoria()">Sí, eliminar esta categoría</button>
-            <button class="btn btn-secondary" routerLink="/categorias">No, volver</button>
+            <button class="btn btn-danger" (click)="eliminarSubcategoria()">Sí, eliminar esta subcategoría</button>
+            <button class="btn btn-secondary" routerLink="/subcategorias">No, volver</button>
         </div>
     </ng-template>
 </div>
@@ -19,6 +19,5 @@
     {{mensaje}}
     Intente más tarde.
 </div>
-
 
 <router-outlet></router-outlet>

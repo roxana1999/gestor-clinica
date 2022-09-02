@@ -10,16 +10,20 @@ import { ServiceCategoriasService } from 'src/app/services/service-categorias.se
 export class CategoriasAgregarComponent implements OnInit {
   categoria: Categoria = new Categoria();
   mensaje: string = "";
+  success: boolean = false;
+  error: boolean = false;
+
   constructor(private servicioCategorias : ServiceCategoriasService) { }
 
   ngOnInit(): void {
   }
 
   agregarCategoria(): void {
+    this.error = false;
     this.servicioCategorias.agregarCategoria(this.categoria).subscribe(
       {
-        next: () => this.mensaje='Agregado exitosamente', 
-        error: (e) => console.log("error: "+e)
+        next: () => {this.success=true; this.mensaje='Categoría agregada exitosamente.'}, 
+        error: (e) => {this.error=true; this.mensaje='Ocurrió un error.'}
       }
     );
   }

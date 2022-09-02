@@ -13,6 +13,8 @@ export class CategoriasActualizarComponent implements OnInit {
   categoria: Categoria = new Categoria();
   mensaje: string = "";
   descripcionAnterior: string = "";
+  success: boolean = false;
+  error: boolean = false;
 
   constructor(private route: ActivatedRoute, private servicioCategorias: ServiceCategoriasService) { }
 
@@ -27,10 +29,11 @@ export class CategoriasActualizarComponent implements OnInit {
   }
 
   actualizarCategoria(): void { 
+    this.error = false;
     this.servicioCategorias.actualizarCategoria(this.idCategoria, this.categoria).subscribe(
       {
-        next: () => this.mensaje='Actualizado exitosamente', 
-        error: (e) => console.log("error: "+e)
+        next: () => {this.success=true; this.mensaje='Categoría actualizada exitosamente.'}, 
+        error: () => {this.error=true; this.mensaje='Ocurrió un error.'}
       }
     );
   }
