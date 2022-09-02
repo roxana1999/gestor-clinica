@@ -12,6 +12,8 @@ export class CategoriasEliminarComponent implements OnInit {
   idCategoria!: number;
   categoria: Categoria = new Categoria();
   mensaje: string = "";
+  success: boolean = false;
+  error: boolean = false;
   
   constructor(private route: ActivatedRoute, private servicioCategorias: ServiceCategoriasService) { }
 
@@ -25,10 +27,11 @@ export class CategoriasEliminarComponent implements OnInit {
   }
 
   eliminarCategoria(): void { 
+    this.error = false;
     this.servicioCategorias.eliminarCategoria(this.idCategoria).subscribe(
       {
-        next: () => this.mensaje='Eliminado exitosamente', 
-        error: (e) => console.log("ocurrió un error: "+e)
+        next: () => {this.success=true; this.mensaje='Categoría eliminada exitosamente.'}, 
+        error: () => {this.error=true; this.mensaje='Ocurrió un error.'}
       }
     );
   }

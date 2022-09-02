@@ -10,6 +10,8 @@ import { CategoriasAgregarComponent } from './components/categorias/categorias-a
 import { FormsModule } from '@angular/forms';
 import { CategoriasActualizarComponent } from './components/categorias/categorias-actualizar/categorias-actualizar.component';
 import { CategoriasEliminarComponent } from './components/categorias/categorias-eliminar/categorias-eliminar.component';
+import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
+import { SubcategoriaEliminarComponent } from './components/subcategoria/subcategoria-eliminar/subcategoria-eliminar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CategoriasEliminarComponent } from './components/categorias/categorias-
     CategoriasComponent,
     CategoriasAgregarComponent,
     CategoriasActualizarComponent,
-    CategoriasEliminarComponent
+    CategoriasEliminarComponent,
+    SubcategoriaComponent,
+    SubcategoriaEliminarComponent
   ],
   imports: [
     BrowserModule,
