@@ -1,0 +1,24 @@
+<div *ngIf="success; else mostrarForm">
+    <div class="alert alert-success" role="alert">
+        {{mensaje}}
+    </div>
+    <button class="btn btn-secondary" routerLink="/subcategorias">Volver</button>
+</div>
+<div>
+    <ng-template #mostrarForm>
+        <b>Categoría: </b> {{categoria.descripcion}}
+        <div class="espacio"></div>
+        <div>Nombre de la subcategoría
+        <input [(ngModel)]="subcategoria.descripcion"></div>
+        <div class="espacio"></div>
+        <button (click)="agregarSubcategoria()" class="btn btn-primary">Agregar nueva subcategoría</button>
+    </ng-template>
+</div>
+
+<div class="espacio"></div>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    {{mensaje}}
+    Intente más tarde.
+</div>
+
+<router-outlet></router-outlet>
