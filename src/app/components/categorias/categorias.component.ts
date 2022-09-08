@@ -9,25 +9,41 @@ import { ServiceCategoriasService } from '../../services/service-categorias.serv
 })
 export class CategoriasComponent implements OnInit {
   categorias: Categoria[] = [];
+  mensaje!: string;
+  filtroDescripcion: String = "";
+
   constructor(private servicioCategorias: ServiceCategoriasService) { }
 
   ngOnInit(): void {
-    this.servicioCategorias.getCategorias().subscribe({
+    this.getCategorias();
+  }
+
+  getCategorias(queryParams: {}={}){
+    this.mensaje="";
+    this.servicioCategorias.getCategorias({like: 'S', ejemplo: JSON.stringify(queryParams)}).subscribe({
       next: (entity) => {
-        entity.lista.sort
-        (
-          function( a, b ) 
-          {
-            if ( a.idCategoria < b.idCategoria ) return -1;
-            if ( a.idCategoria > b.idCategoria ) return 1;
-            return 0;
-          }
-        );
-        this.categorias = entity.lista;  
-        console.log(this.categorias[5].idCategoria);
+        //Ordenar lista por ID
+        entity.lista.sort(this.compararIDs);
+        this.categorias = entity.lista; 
+        if(this.categorias.length==0)
+          this.mensaje="No hay resultados." 
       },
-      error: (e) => console.log('no se pudieron conseguir las categorias')
+      error: (e) => this.mensaje = e
     });
+  }
+
+  filtrarCategorias(){
+    let params: any = {};
+    if (this.filtroDescripcion!="")
+      params["descripcion"] = this.filtroDescripcion;
+    console.log(params);
+    this.getCategorias(params);
+  }
+
+  compararIDs(a: Categoria, b: Categoria){
+    if ( a.idCategoria < b.idCategoria ) return -1;
+    if ( a.idCategoria > b.idCategoria ) return 1;
+    return 0;
   }
 
   

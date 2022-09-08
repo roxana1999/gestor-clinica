@@ -1,8 +1,18 @@
-<div style="width: fit-content; margin-left: auto;">
-  <a routerLink="nuevaCategoria" class="btn btn-primary">Crear nueva categoría</a>
+<div>
+  Descripción contiene:
+  <input [(ngModel)]="filtroDescripcion" name="filtroDescripcion"> 
 </div>
+<div class="espacio-sm"></div>
+<button class="btn btn-info" (click)="filtrarCategorias()">Filtrar resultados</button>
+
 <div class="espacio"></div>
-<h3>Categorías</h3>
+<div class="d-flex" style="justify-content: space-between;">
+  <h3>Categorías
+  </h3>
+  <div>
+    <a routerLink="nuevaCategoria" class="btn btn-primary" style="margin-left: auto;">Crear nueva categoría</a>
+  </div>
+</div>
 <div *ngIf="categorias.length>0">
   <div class="table-responsive">
     <table class="table">
@@ -29,6 +39,8 @@
     </table>
   </div>
 </div>
+
+{{mensaje}}
 
 <div>
   <router-outlet></router-outlet>
