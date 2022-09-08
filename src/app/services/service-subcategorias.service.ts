@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { listaCategorias } from '../models/listaCategorias';
@@ -9,11 +9,13 @@ import { tap } from "rxjs/operators";
   providedIn: 'root'
 })
 export class ServiceSubcategoriasService {
-  private api: string ="https://equipoyosh.com/stock-nutrinatalia/tipoProducto";
+  private api: string ="https://equipoyosh.com/stock-nutrinatalia/tipoProducto/";
+  
   constructor(private http: HttpClient) { }
 
-  getSubcategorias(): Observable<listaCategorias<Subcategoria>> {
-    return this.http.get<listaCategorias<Subcategoria>>(this.api);
+  getSubcategorias(queryParams: {}={}): Observable<listaCategorias<Subcategoria>> {
+    return this.http.get<listaCategorias<Subcategoria>>(this.api, {params: queryParams});
+    //let headers = new HttpHeaders({'Content-Type': 'application/json'});
   }
 
   getSubcategoriaPorId(id: number): Observable<Subcategoria> {
