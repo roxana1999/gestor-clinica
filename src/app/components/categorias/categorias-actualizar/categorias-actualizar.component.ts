@@ -30,7 +30,7 @@ export class CategoriasActualizarComponent implements OnInit {
 
   actualizarCategoria(): void { 
     this.error = false;
-    this.servicioCategorias.actualizarCategoria(this.idCategoria, this.categoria).subscribe(
+    this.servicioCategorias.actualizarCategoria(this.categoria).subscribe(
       {
         next: () => {this.success=true; this.mensaje='Categoría actualizada exitosamente.'}, 
         error: () => {this.error=true; this.mensaje='Ocurrió un error.'}

@@ -9,12 +9,12 @@ import { listaCategorias } from '../models/listaCategorias';
   providedIn: 'root'
 })
 export class ServiceCategoriasService {
-  private api: string ="https://equipoyosh.com/stock-nutrinatalia/categoria";
+  private api: string ="https://equipoyosh.com/stock-nutrinatalia/categoria/";
 
 
   constructor(private http: HttpClient) { }
-  getCategorias(): Observable<listaCategorias<Categoria>> {
-    return this.http.get<listaCategorias<Categoria>>(this.api);
+  getCategorias(queryParams: {}={}): Observable<listaCategorias<Categoria>> {
+    return this.http.get<listaCategorias<Categoria>>(this.api, {params: queryParams});
   }
 
   getCategoriaPorId(id: number): Observable<Categoria> {
@@ -34,11 +34,9 @@ export class ServiceCategoriasService {
       );
   }
 
-  actualizarCategoria(id: number, categoria: Categoria): Observable<Categoria> {
-    let url = this.api
-    console.log(url)
+  actualizarCategoria(categoria: Categoria): Observable<Categoria> {
     return this.http
-      .put<Categoria>(url, categoria)
+      .put<Categoria>(this.api, categoria)
       .pipe(
         tap(
           {
@@ -50,9 +48,8 @@ export class ServiceCategoriasService {
   }
 
   eliminarCategoria(id: number): Observable<Object> {
-    let url = this.api+'/'+id;
-    console.log(url);
-    return this.http.delete(url);
+    console.log(this.api+'/'+id);
+    return this.http.delete(this.api+'/'+id);
   }
 
    

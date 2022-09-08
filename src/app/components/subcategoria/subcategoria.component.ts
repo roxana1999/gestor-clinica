@@ -9,6 +9,7 @@ import { ServiceSubcategoriasService } from 'src/app/services/service-subcategor
 })
 export class SubcategoriaComponent implements OnInit {
   subcategorias: Subcategoria[] = [];
+  mensaje!: string;
   filtroDescripcion: String = "";
   filtroIdCategoria!: number;
 
@@ -19,13 +20,16 @@ export class SubcategoriaComponent implements OnInit {
   }
 
   getSubcategorias(queryParams: {}={}){
+    this.mensaje="";
     this.servicioSubcategorias.getSubcategorias({like: 'S', ejemplo: JSON.stringify(queryParams)}).subscribe({
       next: (entity) => {
         //Ordenar lista por ID
         entity.lista.sort(this.compararIDs);
-        this.subcategorias = entity.lista
+        this.subcategorias = entity.lista;
+        if (this.subcategorias.length==0)
+          this.mensaje="No hay resultados."
       },
-      error: () => console.log('no se pudieron conseguir las subcategorias')
+      error: (e) => this.mensaje = e
     });
   }
 

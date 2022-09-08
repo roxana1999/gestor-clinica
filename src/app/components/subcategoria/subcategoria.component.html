@@ -1,17 +1,18 @@
 <div>
     Descripción contiene:
-    <input [(ngModel)]="filtroDescripcion" name="filtroDescripcion" class="form-control">
+    <input [(ngModel)]="filtroDescripcion" name="filtroDescripcion">
 </div>
+<div class="espacio-sm"></div>
 <div>
     Categoría padre con ID:
-    <input [(ngModel)]="filtroIdCategoria" type="number" class="form-control" min="0" step="1" name="filtroIdCategoria">
+    <input [(ngModel)]="filtroIdCategoria" type="number" min="0" name="filtroIdCategoria">
 </div>
 <div class="espacio-sm"></div>
 <button class="btn btn-info" (click)="filtrarSubcategorias()">Filtrar resultados</button>
 
 <div class="espacio"></div>
 <h3>Subcategorías</h3>
-<div *ngIf="subcategorias.length>0; else noHayResultados">
+<div *ngIf="subcategorias.length>0">
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -40,9 +41,7 @@
         </table>
     </div>
 </div>
-<ng-template #noHayResultados>
-    No hay resultados
-</ng-template>
+{{mensaje}}
 <div>
     <router-outlet></router-outlet>
 </div>
