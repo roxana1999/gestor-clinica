@@ -14,6 +14,10 @@ import { SubcategoriaComponent } from './components/subcategoria/subcategoria.co
 import { SubcategoriaEliminarComponent } from './components/subcategoria/subcategoria-eliminar/subcategoria-eliminar.component';
 import { SubcategoriaAgregarComponent } from './components/subcategoria/subcategoria-agregar/subcategoria-agregar.component';
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
+import { ComponentNameComponent } from './component-name/component-name.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
+import { ServicereservaService } from './services/servicereserva.service';
+import { PresentacionProductoComponent } from './components/presentacion-producto/presentacion-producto.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { SubcategoriaActualizarComponent } from './components/subcategoria/subca
     SubcategoriaComponent,
     SubcategoriaEliminarComponent,
     SubcategoriaAgregarComponent,
-    SubcategoriaActualizarComponent
+    SubcategoriaActualizarComponent,
+    ComponentNameComponent,
+    ReservaComponent,
+    PresentacionProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,9 @@ import { SubcategoriaActualizarComponent } from './components/subcategoria/subca
     HttpClientModule,
     FormsModule
   ],
-  providers: [ServiceCategoriasService],
+  providers: [
+    ServiceCategoriasService,
+    ServicereservaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

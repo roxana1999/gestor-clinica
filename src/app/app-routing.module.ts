@@ -8,6 +8,8 @@ import { SubcategoriaAgregarComponent } from './components/subcategoria/subcateg
 import { SubcategoriaEliminarComponent } from './components/subcategoria/subcategoria-eliminar/subcategoria-eliminar.component';
 import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
+import { PresentacionProductoComponent } from './components/presentacion-producto/presentacion-producto.component';
 
 const routes: Routes = [
   {path:'categorias', component:CategoriasComponent},
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path:'subcategorias', component: SubcategoriaComponent},
   {path:'subcategorias/crearSubcategoria/:id', component: SubcategoriaAgregarComponent},
   {path:'subcategorias/eliminarSubcategoria/:id', component: SubcategoriaEliminarComponent},
-  {path:'subcategorias/actualizarSubcategoria/:id', component: SubcategoriaActualizarComponent}
+  {path:'subcategorias/actualizarSubcategoria/:id', component: SubcategoriaActualizarComponent},
+  {path:'presentacionproducto',component:PresentacionProductoComponent},
+  {path:'reserva', component: ReservaComponent}
 ];
 
 @NgModule({

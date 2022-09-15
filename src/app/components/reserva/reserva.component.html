@@ -1,0 +1,23 @@
+<p>reserva works!</p>
+
+<div *ngIf="reserva.length>0">
+    <table border="1">
+      <tr>
+        <td>Id</td>
+        <td>Descripcion</td>
+      </tr>
+      <tr *ngFor="let p of reserva">
+        <td>{{p.idReserva}}</td>
+        <td>{{p.fecha}}</td>
+        <td>{{p.horaInicio}}</td>
+        <td>{{p.horaFin}}</td>
+        <td>{{p.fechaHoraCreacion}}</td>
+        <td>{{p.flagEstado}}</td>
+        <td>{{p.flagAsistio}}</td>
+        <td>{{p.observacion}}</td>
+        <td>{{p.idFichaClinica}}</td>
+        <td>{{p.idLocal}}</td>
+      </tr>
+    </table>
+  </div>
+  
