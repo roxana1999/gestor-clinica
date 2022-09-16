@@ -23,6 +23,7 @@
                     <th scope="column">Nombre</th>
                     <th scope="column">Cédula</th>
                     <th scope="column">Fecha nacimiento</th>
+                    <th scope="column">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,9 +33,9 @@
                     <td>{{p.fechaNacimiento}}</td>
                     <td>
                         <div class="d-flex flex-column flex-md-row" style="gap: 10px;">
+                            <a [routerLink]="['actualizarPersona', p.idPersona]" class="btn btn-secondary">
+                                Modificar datos</a>
                             <!--
-                                <a [routerLink]="['actualizarCategoria', c.idCategoria]" class="btn btn-secondary">
-                                    Modificar</a>
                                 <a [routerLink]="['eliminarCategoria', c.idCategoria]" class="btn btn-danger"> Eliminar</a>
                             -->
                         </div>

@@ -16,6 +16,7 @@ import { SubcategoriaAgregarComponent } from './components/subcategoria/subcateg
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
 import { PersonaListarComponent } from './components/persona/persona-listar/persona-listar.component';
 import { PersonaAgregarComponent } from './components/persona/persona-agregar/persona-agregar.component';
+import { PersonaActualizarComponent } from './components/persona/persona-actualizar/persona-actualizar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PersonaAgregarComponent } from './components/persona/persona-agregar/pe
     SubcategoriaAgregarComponent,
     SubcategoriaActualizarComponent,
     PersonaListarComponent,
-    PersonaAgregarComponent
+    PersonaAgregarComponent,
+    PersonaActualizarComponent
   ],
   imports: [
     BrowserModule,

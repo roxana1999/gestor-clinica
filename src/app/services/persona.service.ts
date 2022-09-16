@@ -29,4 +29,21 @@ export class PersonaService {
         )
       );
   }
+
+  getPersonaPorId(id: number): Observable<Persona> {
+    return this.http.get<Persona>(this.api+'/'+id);
+  }
+
+  actualizarPersona(persona: Persona): Observable<Persona> {
+    return this.http
+      .put<Persona>(this.api, persona)
+      .pipe(
+        tap(
+          {
+            next: data => {console.log('actualizado '+data)},
+            error: err => console.log("error: "+err)
+          }
+        )
+      );
+  }
 }
