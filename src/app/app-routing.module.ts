@@ -10,6 +10,9 @@ import { SubcategoriaComponent } from './components/subcategoria/subcategoria.co
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agenda-agregar.component';
+import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepcion-horario.component';
+import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario/agregar-excepcion-horario/agregar-excepcion-horario.component';
+
 
 
 const routes: Routes = [
@@ -22,7 +25,11 @@ const routes: Routes = [
   {path:'subcategorias/eliminarSubcategoria/:id', component: SubcategoriaEliminarComponent},
   {path:'subcategorias/actualizarSubcategoria/:id', component: SubcategoriaActualizarComponent},
   {path:'agenda', component: AgendaComponent},
-  {path:'agenda/nuevaAgenda', component: AgendaAgregarComponent}
+  {path:'agenda/nuevaAgenda', component: AgendaAgregarComponent},
+  {path:'excepcion', component: ExcepcionHorarioComponent},
+  {path:'excepcion/nuevaExcepcion', component: AgregarExcepcionHorarioComponent}
+
+
 
 ];
 
