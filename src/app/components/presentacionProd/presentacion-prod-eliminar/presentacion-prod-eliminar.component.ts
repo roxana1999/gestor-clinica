@@ -29,7 +29,7 @@ export class PresentacionProdEliminarComponent implements OnInit {
     this.error = false;
     this.servicioPresentacionProducto.eliminarPresentacionProducto(this.idPresentacionProducto).subscribe(
       {
-        next: () => { this.success = true; this.mensaje = 'Presentacion de producto eliminado exitosamente.' },
+        next: () => { this.success = true; this.mensaje = 'Servicio eliminado exitosamente.' },
         error: (e) => { this.error = true; this.mensaje = 'Ocurrió un error: ' + e.message }
       }
     );

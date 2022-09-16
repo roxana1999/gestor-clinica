@@ -3,17 +3,22 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { listaDatos } from '../models/listaDatos';
 import { PresentacionProducto } from '../models/presentacionProducto';
+import { Producto } from '../models/Producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PresentacionProdService {
   private api: string ="https://equipoyosh.com/stock-nutrinatalia/presentacionProducto/";
-  
+  private api2: string = "https://equipoyosh.com/stock-nutrinatalia/producto/"
   constructor(private http:HttpClient) { }
 
   getPresentacionProductos(queryParams: {}={}): Observable<listaDatos<PresentacionProducto>> {
     return this.http.get<listaDatos<PresentacionProducto>>(this.api, {params: queryParams});
+  }
+
+  getIdProducto(queryParams: {}={}): Observable<listaDatos<Producto>> {
+    return this.http.get<listaDatos<Producto>>(this.api2, {params: queryParams});
   }
 
   agregarPresentacionProducto(c: PresentacionProducto): Observable<PresentacionProducto> {

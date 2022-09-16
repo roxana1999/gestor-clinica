@@ -29,11 +29,14 @@
                     <td>{{c.descripcion}}</td>
                     <td>{{c.idCategoria.idCategoria}}</td>
                     <td>
-                        <div class="d-flex flex-column flex-md-row" style="width: fit-content; gap: 5px; display: inline-block;">
+                        <div class="d-flex flex-column flex-md-row"
+                            style="width: fit-content; gap: 5px; display: inline-block;">
                             <a [routerLink]="['actualizarSubcategoria', c.idTipoProducto]" class="btn btn-secondary">
                                 Modificar</a>
                             <a [routerLink]="['eliminarSubcategoria', c.idTipoProducto]" class="btn btn-danger">
                                 Eliminar</a>
+                            <a [routerLink]="['/presentacionProducto/agregarPresentacionProducto', c.idTipoProducto]" class="btn btn-primary">
+                                Crear Servicio</a>
                         </div>
                     </td>
                 </tr>

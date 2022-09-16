@@ -10,6 +10,7 @@ import { ServiceSubcategoriasService } from 'src/app/services/service-subcategor
   templateUrl: './subcategoria-agregar.component.html',
   styleUrls: ['./subcategoria-agregar.component.css']
 })
+
 export class SubcategoriaAgregarComponent implements OnInit {
   idCategoria!: number;
   categoria: Categoria = new Categoria();

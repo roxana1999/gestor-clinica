@@ -24,6 +24,8 @@ import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepc
 import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario/agregar-excepcion-horario/agregar-excepcion-horario.component';
 import { PresentacionProdListarComponent } from './components/presentacionProd/presentacion-prod-listar/presentacion-prod-listar.component';
 import { PresentacionProdEliminarComponent } from './components/presentacionProd/presentacion-prod-eliminar/presentacion-prod-eliminar.component';
+import { PresentacionProdActualizarComponent } from './components/presentacionProd/presentacion-prod-actualizar/presentacion-prod-actualizar.component';
+import { PresentacionProdAgregarComponent } from './components/presentacionProd/presentacion-prod-agregar/presentacion-prod-agregar.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { PresentacionProdEliminarComponent } from './components/presentacionProd
     AgregarExcepcionHorarioComponent,
     PresentacionProdListarComponent,
     PresentacionProdEliminarComponent,
+    PresentacionProdActualizarComponent,
+    PresentacionProdAgregarComponent,
   ],
   imports: [
     BrowserModule,
