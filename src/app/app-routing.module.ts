@@ -8,6 +8,10 @@ import { SubcategoriaAgregarComponent } from './components/subcategoria/subcateg
 import { SubcategoriaEliminarComponent } from './components/subcategoria/subcategoria-eliminar/subcategoria-eliminar.component';
 import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
+import { PersonaListarComponent } from './components/persona/persona-listar/persona-listar.component';
+import { PersonaAgregarComponent } from './components/persona/persona-agregar/persona-agregar.component';
+import { PersonaActualizarComponent } from './components/persona/persona-actualizar/persona-actualizar.component';
+import { PersonaEliminarComponent } from './components/persona/persona-eliminar/persona-eliminar.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agenda-agregar.component';
 import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepcion-horario.component';
@@ -24,13 +28,14 @@ const routes: Routes = [
   {path:'subcategorias/crearSubcategoria/:id', component: SubcategoriaAgregarComponent},
   {path:'subcategorias/eliminarSubcategoria/:id', component: SubcategoriaEliminarComponent},
   {path:'subcategorias/actualizarSubcategoria/:id', component: SubcategoriaActualizarComponent},
+  {path:'personas', component: PersonaListarComponent},
+  {path:'personas/agregarPersona', component: PersonaAgregarComponent},
+  {path:'personas/actualizarPersona/:id', component: PersonaActualizarComponent},
+  {path:'personas/eliminarPersona/:id', component: PersonaEliminarComponent},
   {path:'agenda', component: AgendaComponent},
   {path:'agenda/nuevaAgenda', component: AgendaAgregarComponent},
   {path:'excepcion', component: ExcepcionHorarioComponent},
-  {path:'excepcion/nuevaExcepcion', component: AgregarExcepcionHorarioComponent}
-
-
-
+  {path:'excepcion/nuevaExcepcion', component: AgregarExcepcionHorarioComponent},
 ];
 
 @NgModule({

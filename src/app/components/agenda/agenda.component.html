@@ -43,11 +43,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let c of agendas">
-          <th scope="row">{{ c.idEmpleado?.idPersona }}</th>
+          <th scope="row">{{ c.idEmpleado.idPersona }}</th>
           <td>{{ c.dia }}</td>
           <td>{{ dividir(c.horaAperturaCadena) }}</td>
           <td>{{ dividir(c.horaCierreCadena) }}</td>
-          <td>{{ c.idEmpleado?.nombre }}</td>
+          <td>{{ c.idEmpleado.nombre }}</td>
         </tr>
       </tbody>
     </table>

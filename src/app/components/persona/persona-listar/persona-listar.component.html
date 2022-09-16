@@ -1,0 +1,69 @@
+<div style="font-size: smaller; text-align: right;">
+    <div>
+        Mostrar resultados en orden 
+        <select name="select" [(ngModel)]="orden">
+            <option *ngFor="let option of ordenes" [ngValue]="option.id">{{option.value}}</option>
+        </select> por 
+        <select name="select2" [(ngModel)]="atributo">
+             <option *ngFor="let option of atributos" [ngValue]="option.value">{{option.value}}</option>
+        </select>
+        <button class="btn btn-info btn-sm" style="margin: 10px; margin-right: 0;" (click)="filtrarPersonas()">Filtrar</button>
+    </div>
+    <div class="espacio"></div>
+    <div>
+        Buscar por nombre:
+        <input [(ngModel)]="nombreCompleto">
+        <button class="btn btn-info btn-sm" style="margin: 10px; margin-right: 0;" (click)="buscarPorNombre()">Filtrar</button>
+    </div>
+    <div class="espacio"></div>
+    <div>
+        Buscar por nombre (contiene): 
+        <input [(ngModel)]="nombreContiene">
+        <button class="btn btn-info btn-sm" style="margin: 10px; margin-right: 0;" (click)="buscarSiContiene()">Filtrar</button>
+    </div>
+    <div class="espacio"></div>
+    <div>
+        <button class="btn btn-info btn-sm" style="margin: 10px; margin-right: 0;" (click)="mostrarUsuariosSistema()">Filtrar fisioterapeutas</button>
+    </div>
+</div>
+<div class="espacio"></div>
+<div class="d-flex" style="justify-content: space-between;">
+    <h3>Personas</h3>
+    <div>
+        <a routerLink="agregarPersona" class="btn btn-primary" style="margin-left: auto;">Agregar Persona</a>
+    </div>
+</div>
+<div *ngIf="personas.length>0">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="column">Nombre</th>
+                    <th scope="column">Cédula</th>
+                    <th scope="column">Fecha nacimiento</th>
+                    <th scope="column">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of personas">
+                    <th scope="row">{{p.apellido}}, {{p.nombre}}</th>
+                    <td>{{p.cedula}}</td>
+                    <td>{{p.fechaNacimiento}}</td>
+                    <td>
+                        <div class="d-flex flex-column flex-md-row" style="gap: 10px;">
+                            <a [routerLink]="['actualizarPersona', p.idPersona]" class="btn btn-secondary">
+                                Modificar datos</a>
+                            <a [routerLink]="['eliminarPersona', p.idPersona]" class="btn btn-danger">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{mensaje}}
+
+<div>
+    <router-outlet></router-outlet>
+</div>

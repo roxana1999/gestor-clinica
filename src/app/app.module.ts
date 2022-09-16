@@ -14,6 +14,10 @@ import { SubcategoriaComponent } from './components/subcategoria/subcategoria.co
 import { SubcategoriaEliminarComponent } from './components/subcategoria/subcategoria-eliminar/subcategoria-eliminar.component';
 import { SubcategoriaAgregarComponent } from './components/subcategoria/subcategoria-agregar/subcategoria-agregar.component';
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
+import { PersonaListarComponent } from './components/persona/persona-listar/persona-listar.component';
+import { PersonaAgregarComponent } from './components/persona/persona-agregar/persona-agregar.component';
+import { PersonaActualizarComponent } from './components/persona/persona-actualizar/persona-actualizar.component';
+import { PersonaEliminarComponent } from './components/persona/persona-eliminar/persona-eliminar.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agenda-agregar.component';
 import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepcion-horario.component';
@@ -30,6 +34,10 @@ import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario
     SubcategoriaEliminarComponent,
     SubcategoriaAgregarComponent,
     SubcategoriaActualizarComponent,
+    PersonaListarComponent,
+    PersonaAgregarComponent,
+    PersonaActualizarComponent,
+    PersonaEliminarComponent,
     AgendaComponent,
     AgendaAgregarComponent,
     ExcepcionHorarioComponent,
