@@ -9,6 +9,7 @@ import { SubcategoriaEliminarComponent } from './components/subcategoria/subcate
 import { SubcategoriaComponent } from './components/subcategoria/subcategoria.component';
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
 import { PersonaListarComponent } from './components/persona/persona-listar/persona-listar.component';
+import { PersonaAgregarComponent } from './components/persona/persona-agregar/persona-agregar.component';
 
 const routes: Routes = [
   {path:'categorias', component:CategoriasComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'subcategorias/eliminarSubcategoria/:id', component: SubcategoriaEliminarComponent},
   {path:'subcategorias/actualizarSubcategoria/:id', component: SubcategoriaActualizarComponent},
   {path:'personas', component: PersonaListarComponent},
+  {path:'personas/agregarPersona', component: PersonaAgregarComponent},
 ];
 
 @NgModule({
