@@ -31,7 +31,8 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">ID Producto</th>
-                    <th scope="col">ID Subcategoría</th> <!--IdTipoProducto--> 
+                    <th scope="col">ID Subcategoría</th>
+                    <!--IdTipoProducto-->
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
@@ -43,14 +44,15 @@
                     <td>{{p.idProducto.idProducto}}</td>
                     <td>{{p.idProducto.idTipoProducto.idTipoProducto}}</td>
                     <td>
+                        <div class="d-flex flex-column flex-md-row"
+                            style="width: fit-content; gap: 5px; display: inline-block;">
+                            <a [routerLink]="['eliminarPresentacionProducto', p.idPresentacionProducto]" class="btn btn-danger">
+                                Eliminar</a>
+                        </div>
                         <!---
-                            <div class="d-flex flex-column flex-md-row" style="width: fit-content; gap: 5px; display: inline-block;">
                                 <a [routerLink]="['actualizarSubcategoria', p.idPresentacionProducto]" class="btn btn-secondary">
                                     Modificar</a>
-                                <a [routerLink]="['eliminarSubcategoria', p.idPresentacionProducto]" class="btn btn-danger">
-                                    Eliminar</a>
-                            </div>
-                        -->
+                            -->
                     </td>
                 </tr>
             </tbody>
