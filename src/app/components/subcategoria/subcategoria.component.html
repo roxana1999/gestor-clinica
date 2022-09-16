@@ -1,14 +1,12 @@
-<div>
+<div class="text-right" style="font-size: smaller">
     Descripción contiene:
     <input [(ngModel)]="filtroDescripcion" name="filtroDescripcion">
-</div>
-<div class="espacio-sm"></div>
-<div>
+    <div class="espacio-sm"></div>
     Categoría padre con ID:
     <input [(ngModel)]="filtroIdCategoria" type="number" min="0" name="filtroIdCategoria">
+    <div class="espacio-sm"></div>
+    <button class="btn btn-info btn-sm" (click)="filtrarSubcategorias()">Filtrar resultados</button>
 </div>
-<div class="espacio-sm"></div>
-<button class="btn btn-info" (click)="filtrarSubcategorias()">Filtrar resultados</button>
 
 <div class="espacio"></div>
 <h3>Subcategorías</h3>
