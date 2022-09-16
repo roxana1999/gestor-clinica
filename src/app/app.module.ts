@@ -16,6 +16,8 @@ import { SubcategoriaAgregarComponent } from './components/subcategoria/subcateg
 import { SubcategoriaActualizarComponent } from './components/subcategoria/subcategoria-actualizar/subcategoria-actualizar.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agenda-agregar.component';
+import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepcion-horario.component';
+import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario/agregar-excepcion-horario/agregar-excepcion-horario.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agend
     SubcategoriaActualizarComponent,
     AgendaComponent,
     AgendaAgregarComponent,
+    ExcepcionHorarioComponent,
+    AgregarExcepcionHorarioComponent,
   ],
   imports: [
     BrowserModule,
