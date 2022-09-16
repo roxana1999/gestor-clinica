@@ -16,6 +16,7 @@ import { AgendaComponent } from './components/agenda/agenda.component';
 import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agenda-agregar.component';
 import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepcion-horario.component';
 import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario/agregar-excepcion-horario/agregar-excepcion-horario.component';
+import { PresentacionProdListarComponent } from './components/presentacionProd/presentacion-prod-listar/presentacion-prod-listar.component';
 
 
 
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:'agenda/nuevaAgenda', component: AgendaAgregarComponent},
   {path:'excepcion', component: ExcepcionHorarioComponent},
   {path:'excepcion/nuevaExcepcion', component: AgregarExcepcionHorarioComponent},
+  {path:'presentacionProducto', component: PresentacionProdListarComponent},
 ];
 
 @NgModule({
