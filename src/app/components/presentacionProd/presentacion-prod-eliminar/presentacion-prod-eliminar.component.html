@@ -1,0 +1,23 @@
+<div *ngIf="success; else mostrarForm">
+    <div class="alert alert-success" role="alert">
+        {{mensaje}}
+    </div>
+    <button class="btn btn-secondary" routerLink="/presentacionProducto">Volver</button>
+</div>
+<div>
+    <ng-template #mostrarForm>
+        <p><b>Datos de la presentación de producto</b></p>
+        <b>Nombre: </b> {{presentacionProducto.nombre}}<br>
+        <b>Descripción: </b> {{presentacionProducto.descripcion}}
+        <div class="espacio"></div>
+        <p>¿Desea eliminar el registro de esta presentación de producto?</p>
+        <div class="d-flex" style="gap: 10px;">
+            <button class="btn btn-danger" (click)="eliminarPresentacionProducto()">Sí, eliminar registro</button>
+            <button class="btn btn-secondary" routerLink="/presentacionProducto">No, volver</button>
+        </div>
+    </ng-template>
+</div>
+<div class="espacio"></div>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    {{mensaje}}
+</div>

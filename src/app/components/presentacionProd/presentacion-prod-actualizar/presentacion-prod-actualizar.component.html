@@ -1,0 +1,24 @@
+<div *ngIf="success; else mostrarForm">
+    <div class="alert alert-success" role="alert">
+        {{mensaje}}
+    </div>
+    <button class="btn btn-secondary" routerLink="/presentacionProducto">Volver</button>
+</div>
+<div>
+    <ng-template #mostrarForm>
+        <div class="form-group">
+            Nombre <input class="form-control" [(ngModel)]="presentacionProducto.nombre">
+        </div>
+        <div class="form-group">
+            Descripción <input class="form-control" [(ngModel)]="presentacionProducto.descripcion">
+        </div>
+        <div class="espacio"></div>
+        <button (click)="actualizarPresentacionProducto()" class="btn btn-primary">Actualizar persona</button>
+    </ng-template>
+</div>
+<div class="espacio"></div>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    {{mensaje}}
+</div>
+
+<router-outlet></router-outlet>

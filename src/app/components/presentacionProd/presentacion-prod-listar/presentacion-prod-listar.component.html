@@ -1,0 +1,53 @@
+<div style="text-align:right; font-size: smaller;">
+    <div>
+        Nombre contiene:
+        <input [(ngModel)]="filtroNombre">
+        <button class="btn btn-info btn-sm" style="margin: 10px; margin-right: 0;" (click)="filtrarPresentaciones()">Filtrar</button>
+        <br>ID Subcategoría:
+        <input [(ngModel)]="filtroIdTipoProducto" type="number">
+        <button class="btn btn-info btn-sm" style="margin: 10px; margin-right: 0;" (click)="filtrarPorIdTipoProducto()">Filtrar</button>
+    </div>
+</div>
+<div class="espacio"></div>
+<h3>Servicios</h3>
+<div *ngIf="presentaciones.length>0">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID Servicio</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">ID Producto</th>
+                    <th scope="col">ID Subcategoría</th>
+                    <!--IdTipoProducto-->
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of presentaciones">
+                    <th scope="row">{{p.idPresentacionProducto}}</th>
+                    <td>{{p.nombre}}</td>
+                    <td>{{p.descripcion}}</td>
+                    <td>{{p.codigo}}</td>
+                    <td>{{p.idProducto.idProducto}}</td>
+                    <td>{{p.idProducto.idTipoProducto.idTipoProducto}}</td>
+                    <td>
+                        <div class="d-flex flex-column flex-md-row"
+                            style="width: fit-content; gap: 5px; display: inline-block;">
+                            <a [routerLink]="['actualizarPresentacionProducto', p.idPresentacionProducto]" class="btn btn-secondary">
+                                Modificar</a>
+                            <a [routerLink]="['eliminarPresentacionProducto', p.idPresentacionProducto]" class="btn btn-danger">
+                                Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{{mensaje}}
+<div>
+    <router-outlet></router-outlet>
+</div>

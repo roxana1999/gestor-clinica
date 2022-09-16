@@ -22,6 +22,10 @@ import { AgendaComponent } from './components/agenda/agenda.component';
 import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agenda-agregar.component';
 import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepcion-horario.component';
 import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario/agregar-excepcion-horario/agregar-excepcion-horario.component';
+import { PresentacionProdListarComponent } from './components/presentacionProd/presentacion-prod-listar/presentacion-prod-listar.component';
+import { PresentacionProdEliminarComponent } from './components/presentacionProd/presentacion-prod-eliminar/presentacion-prod-eliminar.component';
+import { PresentacionProdActualizarComponent } from './components/presentacionProd/presentacion-prod-actualizar/presentacion-prod-actualizar.component';
+import { PresentacionProdAgregarComponent } from './components/presentacionProd/presentacion-prod-agregar/presentacion-prod-agregar.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,10 @@ import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario
     AgendaAgregarComponent,
     ExcepcionHorarioComponent,
     AgregarExcepcionHorarioComponent,
+    PresentacionProdListarComponent,
+    PresentacionProdEliminarComponent,
+    PresentacionProdActualizarComponent,
+    PresentacionProdAgregarComponent,
   ],
   imports: [
     BrowserModule,
