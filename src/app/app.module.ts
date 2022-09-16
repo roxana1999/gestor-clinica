@@ -18,6 +18,10 @@ import { PersonaListarComponent } from './components/persona/persona-listar/pers
 import { PersonaAgregarComponent } from './components/persona/persona-agregar/persona-agregar.component';
 import { PersonaActualizarComponent } from './components/persona/persona-actualizar/persona-actualizar.component';
 import { PersonaEliminarComponent } from './components/persona/persona-eliminar/persona-eliminar.component';
+import { AgendaComponent } from './components/agenda/agenda.component';
+import { AgendaAgregarComponent } from './components/agenda/agenda-agregar/agenda-agregar.component';
+import { ExcepcionHorarioComponent } from './components/excepcion-horario/excepcion-horario.component';
+import { AgregarExcepcionHorarioComponent } from './components/excepcion-horario/agregar-excepcion-horario/agregar-excepcion-horario.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { PersonaEliminarComponent } from './components/persona/persona-eliminar/
     PersonaListarComponent,
     PersonaAgregarComponent,
     PersonaActualizarComponent,
-    PersonaEliminarComponent
+    PersonaEliminarComponent,
+    AgendaComponent,
+    AgendaAgregarComponent,
+    ExcepcionHorarioComponent,
+    AgregarExcepcionHorarioComponent,
   ],
   imports: [
     BrowserModule,

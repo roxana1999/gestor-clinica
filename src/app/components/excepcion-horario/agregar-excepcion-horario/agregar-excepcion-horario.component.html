@@ -1,0 +1,47 @@
+<div *ngIf="success; else mostrarForm">
+  <div class="alert alert-success" role="alert">
+    {{ mensaje }}
+  </div>
+  <button class="btn btn-secondary" routerLink="/excepcion">Volver</button>
+</div>
+<div>
+  <ng-template #mostrarForm>
+    Fecha <input [(ngModel)]="fecha" type="date" /><br />
+    {{cambiarFormato()}}
+    Habilitado
+    <input
+      [(ngModel)]="habilitado"
+      type="checkbox"
+    /><br />
+    {{cambiarHabilitacion()}}
+    <div *ngIf="habilitado">
+      Abre <input [(ngModel)]="excepcion.horaAperturaCadena" /><br />
+      Cierra <input [(ngModel)]="excepcion.horaCierreCadena" /><br />
+      Intervalo
+      <input [(ngModel)]="excepcion.intervaloMinutos" type="number" /><br />
+    </div>
+    Empleado <input [(ngModel)]="excepcion.idEmpleado.idPersona" type="number">
+
+    <!-- {
+            "fechaCadena": "20190910",
+            "horaAperturaCadena":"2000",
+            "horaCierreCadena":"2230",
+            "flagEsHabilitar":"S",
+            "idEmpleado":{
+            "idPersona":4
+            } ,
+            "intervaloMinutos":10
+            } -->
+    <div class="espacio"></div>
+    <button (click)="agregarExcepcion()" class="btn btn-primary">
+      Agregar nueva excepcion
+    </button>
+  </ng-template>
+</div>
+<div class="espacio"></div>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  {{ mensaje }}
+  Intente más tarde.
+</div>
+
+<router-outlet></router-outlet>

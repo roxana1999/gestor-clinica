@@ -1,0 +1,59 @@
+<div>
+  Empleado contiene:
+  <input
+    [(ngModel)]="filtroEmpleado"
+    type="number"
+    min="0"
+    name="filtroEmpleado"
+  />
+</div>
+<div class="espacio-sm"></div>
+<div>
+  Dia:
+  <input [(ngModel)]="filtroDia" type="number" min="0" name="filtroDia" />
+</div>
+<div class="espacio-sm"></div>
+<button class="btn btn-info" (click)="filtrarAgendas()">
+  Filtrar resultados
+</button>
+
+<div class="espacio"></div>
+<div class="d-flex" style="justify-content: space-between">
+  <h3>Agendas</h3>
+  <div>
+    <a
+      routerLink="nuevaAgenda"
+      class="btn btn-primary"
+      style="margin-left: auto"
+      >Crear nueva agenda</a
+    >
+  </div>
+</div>
+<div *ngIf="agendas.length > 0">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Dia</th>
+          <th scope="col">Apertura</th>
+          <th scope="col">Cierre</th>
+          <th scope="col">Empleado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of agendas">
+          <th scope="row">{{ c.idEmpleado.idPersona }}</th>
+          <td>{{ c.dia }}</td>
+          <td>{{ dividir(c.horaAperturaCadena) }}</td>
+          <td>{{ dividir(c.horaCierreCadena) }}</td>
+          <td>{{ c.idEmpleado.nombre }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{{ mensaje }}
+<div>
+  <router-outlet></router-outlet>
+</div>
