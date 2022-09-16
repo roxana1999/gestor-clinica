@@ -46,4 +46,9 @@ export class PersonaService {
         )
       );
   }
+
+  eliminarPersona(id: number): Observable<Object> {
+    console.log(this.api+'/'+id);
+    return this.http.delete(this.api+'/'+id);
+  }
 }

@@ -1,0 +1,26 @@
+<div *ngIf="success; else mostrarForm">
+    <div class="alert alert-success" role="alert">
+        {{mensaje}}
+    </div>
+    <button class="btn btn-secondary" routerLink="/personas">Volver</button>
+</div>
+<div>
+    <ng-template #mostrarForm>
+        <p><b>Datos de la persona</b></p>
+        <div *ngFor="let item of persona | keyvalue:keepOriginalOrder">
+            <b>{{item.key}}:</b> {{item.value}}
+        </div><br>
+        <p>¿Desea eliminar el registro de esta persona?</p>
+        <div class="d-flex" style="gap: 10px;">
+            <button class="btn btn-danger" (click)="eliminarPersona()">Sí, eliminar registro</button>
+            <button class="btn btn-secondary" routerLink="/personas">No, volver</button>
+        </div>
+    </ng-template>
+</div>
+<div class="espacio"></div>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    {{mensaje}}
+</div>
+
+
+<router-outlet></router-outlet>

@@ -11,6 +11,7 @@ import { SubcategoriaActualizarComponent } from './components/subcategoria/subca
 import { PersonaListarComponent } from './components/persona/persona-listar/persona-listar.component';
 import { PersonaAgregarComponent } from './components/persona/persona-agregar/persona-agregar.component';
 import { PersonaActualizarComponent } from './components/persona/persona-actualizar/persona-actualizar.component';
+import { PersonaEliminarComponent } from './components/persona/persona-eliminar/persona-eliminar.component';
 
 const routes: Routes = [
   {path:'categorias', component:CategoriasComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'personas', component: PersonaListarComponent},
   {path:'personas/agregarPersona', component: PersonaAgregarComponent},
   {path:'personas/actualizarPersona/:id', component: PersonaActualizarComponent},
+  {path:'personas/eliminarPersona/:id', component: PersonaEliminarComponent},
 ];
 
 @NgModule({
